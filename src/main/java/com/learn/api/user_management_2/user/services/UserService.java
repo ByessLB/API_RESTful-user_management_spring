@@ -32,11 +32,12 @@ import com.learn.api.user_management_2.user.services.validation.EmailValidator;
 import com.learn.api.user_management_2.user.services.validation.PasswordValidator;
 import com.learn.api.user_management_2.user.services.validation.PhoneValidator;
 
-import lombok.extern.slf4j.Slf4j;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @Service
-@Slf4j
 public class UserService {
+
+    private static final Logger log = LoggerFactory.getLogger(UserService.class);
 
     private PasswordEncoder passwordEncoder;
 

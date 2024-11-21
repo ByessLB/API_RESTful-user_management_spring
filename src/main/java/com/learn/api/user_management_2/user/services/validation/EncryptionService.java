@@ -1,4 +1,4 @@
-package com.learn.api.user_management_2.user.services;
+package com.learn.api.user_management_2.user.services.validation;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;

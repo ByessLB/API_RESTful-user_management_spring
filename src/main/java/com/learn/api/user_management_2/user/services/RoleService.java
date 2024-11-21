@@ -2,7 +2,8 @@ package com.learn.api.user_management_2.user.services;
 
 import java.util.Optional;
 
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,11 +19,13 @@ import com.learn.api.user_management_2.user.exceptions.RoleNotFoundException;
 import com.learn.api.user_management_2.user.repositories.PermissionRepository;
 import com.learn.api.user_management_2.user.repositories.RoleRepository;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
-@Slf4j
 public class RoleService {
+
+    private static final Logger log = LoggerFactory.getLogger(RoleService.class);
 
     @Autowired
     private RoleRepository roleRepository;

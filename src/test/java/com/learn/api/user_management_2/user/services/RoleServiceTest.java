@@ -119,4 +119,25 @@ public class RoleServiceTest {
         assertEquals(genId, role.getId());
         assertEquals("TEST", role.getRole());
     }
+
+    // DeleteRole
+
+    @Test
+    public void given_existing_role_when_deleteRole_throw_RoleNotFoundException() {
+        assertThrows(RoleNotFoundException.class, () -> {
+            roleService.deleteRole(1);
+        });
+    }
+
+    @Test
+    public void given_existing_role_in_use_xhen_deleteRole_throw_RoleInUseException() {
+        assertThrows(RoleInUseException.class, () -> {
+            when(roleRepository.findById(1)).thenReturn(Optional.of(new Role(1, "TEST")));
+            when(roleRepository.countRoleUsage(1)).thenReturn(10);
+
+            roleService.deleteRole(1);
+        });
+    }
+
+    
 }

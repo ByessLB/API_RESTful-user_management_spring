@@ -8,12 +8,20 @@ import lombok.Data;
 /**
  * DTO for the list of users
  */
-@Data
 public class UserListDTO implements Serializable {
 
     private ArrayList<UserDTO> userList;
 
     public UserListDTO() {
         userList = new ArrayList<>();
+    }
+
+    // Getter & Setter
+    public ArrayList<UserDTO> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(ArrayList<UserDTO> userList) {
+        this.userList = userList;
     }
 }

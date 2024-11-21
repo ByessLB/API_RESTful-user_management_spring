@@ -10,7 +10,7 @@ import com.learn.api.user_management_2.user.entities.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    @Query(value = "SELECT u FROM users u WHERE u.contact.email = :email")
+    @Query(value = "SELECT u FROM User u WHERE u.contact.email = :email")
     User findByEmail(@Param("email") String email);
 
     User findByUsername(String username);

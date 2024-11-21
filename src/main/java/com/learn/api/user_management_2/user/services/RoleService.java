@@ -59,7 +59,7 @@ public class RoleService {
      * @param roleName
      */
 
-    public static void validateroleName(String roleName) {
+    public static void validateRoleName(String roleName) {
         if (roleName == null || roleName.isEmpty()) {
             throw new InvalidRoleDataException(String.format("Invalid role name: %s", roleName));
         }
@@ -74,7 +74,7 @@ public class RoleService {
 
     @Transactional
     public Role createRole(String roleStr) {
-        validateroleName(roleStr);
+        validateRoleName(roleStr);
 
         // Check roleStr not in use
         if (roleRepository.findByRole(roleStr).isPresent()) {
